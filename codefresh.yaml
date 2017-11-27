@@ -15,3 +15,12 @@ steps:
     candidate: ${{main_build}}
     tag: latest
     image_name: codefresh/github-pr-plugin
+
+  github-pr:
+    image: codefresh/github-pr-plugin
+    environment:
+      - GITHUB_REPO_OWNER=${{CF_REPO_OWNER}}
+      - GITHUB_REPO_NAME=${{CF_REPO_NAME}}
+      - BASE=master
+      - HEAD=${{CF_BRANCH}}
+      - TITLE=Codefresh PR for ${{CF_BRANCH}}
