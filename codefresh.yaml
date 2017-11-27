@@ -1,0 +1,17 @@
+version: '1.0'
+
+steps:
+
+  main_build:
+    type: build
+    title: "Building GitHub Pull Request container ..."
+    description: build github pr container
+    image_name: codefresh/github-pr-plugin
+
+  push_image:
+    type: push
+    title: "Pushing github-pr-plugin:latest ..."
+    description: Push github-pr-plugin image to the DockerHub
+    candidate: ${{main_build}}
+    tag: latest
+    image_name: codefresh/github-pr-plugin
