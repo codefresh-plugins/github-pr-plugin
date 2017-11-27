@@ -18,7 +18,7 @@ Creates a new pull request in GitHub
 - Add "github-pr" step as descibed below
 
 ```yaml
-# codefresh.yml example with deploy to ecs step
+# codefresh.yml example with github pr step
 version: '1.0'
 
 steps:
