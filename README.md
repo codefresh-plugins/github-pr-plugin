@@ -14,8 +14,8 @@ Creates a new pull request in GitHub
 ## Deployment with Codefresh
 - Add encrypted environment variables for:
      * GITHUB_TOKEN
-     
-- Add "github-pr" step as descibed below 
+
+- Add "github-pr" step as descibed below
 
 ```yaml
 # codefresh.yml example with deploy to ecs step
@@ -39,5 +39,9 @@ steps:
       - BASE=master
       - HEAD=${{CF_BRANCH}}
       - TITLE=Codefresh PR for ${{CF_BRANCH}}
-      
+
+    when:
+      - name: "Execute only for not 'master' branch"
+        condition: "'${{CF_BRANCH}}' != 'master'"
+
 ```
