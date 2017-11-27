@@ -39,9 +39,4 @@ steps:
       - BASE=master
       - HEAD=${{CF_BRANCH}}
       - TITLE=Codefresh PR for ${{CF_BRANCH}}
-
-    when:
-      - name: "Execute only for not 'master' branch"
-        condition: "'${{CF_BRANCH}}' != 'master'"
-
 ```
