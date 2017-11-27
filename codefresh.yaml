@@ -4,7 +4,7 @@ steps:
 
   main_build:
     type: build
-    title: "Building GitHub Pull Request container ..."
+    title: "Building GitHub pull request container ..."
     description: build github pr container
     image_name: codefresh/github-pr-plugin
 
