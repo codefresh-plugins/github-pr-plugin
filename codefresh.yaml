@@ -16,6 +16,7 @@ steps:
     tag: latest
     image_name: codefresh/github-pr-plugin
 
+
   github-pr:
     image: codefresh/github-pr-plugin
     environment:
