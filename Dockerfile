@@ -1,8 +1,8 @@
 FROM alpine:3.6
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl bash
 
-ADD ./create.sh /
-RUN chmod +x /create.sh
+ADD ./run.sh /
+RUN chmod +x /run.sh
 
-CMD /create.sh
+CMD /run.sh

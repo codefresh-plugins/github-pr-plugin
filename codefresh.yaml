@@ -8,19 +8,24 @@ steps:
     description: build github pr container
     image_name: codefresh/github-pr-plugin
 
-  push_image:
+  push_testing:
+    type: push
+    title: "Pushing github-pr-plugin with branch tag for testing ..."
+    description: Push github-pr-plugin testing image to the DockerHub
+    candidate: ${{main_build}}
+    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
+    image_name: codefresh/github-pr-plugin
+    when:
+      branch:
+        ignore: [ master ]
+
+  push_latest:
     type: push
     title: "Pushing github-pr-plugin:latest ..."
-    description: Push github-pr-plugin image to the DockerHub
+    description: Push github-pr-plugin latest image to the DockerHub
     candidate: ${{main_build}}
     tag: latest
     image_name: codefresh/github-pr-plugin
-
-  github-pr:
-    image: codefresh/github-pr-plugin
-    environment:
-      - GITHUB_REPO_OWNER=${{CF_REPO_OWNER}}
-      - GITHUB_REPO_NAME=${{CF_REPO_NAME}}
-      - BASE=master
-      - HEAD=${{CF_BRANCH}}
-      - TITLE=Codefresh PR for ${{CF_BRANCH}}
+    when:
+      branch:
+        only: [ master ]
