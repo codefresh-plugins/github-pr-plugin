@@ -16,7 +16,7 @@ maintainers: # (optional)
     email: nick.sakovich@codefresh.io
   - name: Yaroslav Drachenko
     email: yaroslav@codefresh.io
-icon: https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png
+icon: https://raw.githubusercontent.com/codefresh-plugins/cfstep-github-release/master/icon.jpg
 envs:
   - name: GITHUB_TOKEN
     type: required
