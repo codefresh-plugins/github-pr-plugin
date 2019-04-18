@@ -4,8 +4,8 @@ tag: master
 version: 0.2.0
 description: Operates on GitHub pull requests
 categories:
-- Git
-- Code-review
+- git
+- code-review
 keywords:
 - docker
 - github
