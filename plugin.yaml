@@ -1,4 +1,4 @@
-image: codefresh/github-pr-plugin
+image: codefreshplugins/github-pr-plugin
 tag: master
 version: 0.2.0
 description: Operates on GitHub pull requests

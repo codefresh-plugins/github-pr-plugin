@@ -34,7 +34,7 @@ steps:
     tag: ${{CF_BRANCH}}
 
   github-pr:
-    image: codefresh/github-pr-plugin
+    image: codefreshplugins/github-pr-plugin
     environment:
       - GITHUB_REPO_OWNER=${{CF_REPO_OWNER}}
       - GITHUB_REPO_NAME=${{CF_REPO_NAME}}
@@ -61,7 +61,7 @@ steps:
     tag: ${{CF_BRANCH}}
 
   github-pr:
-    image: codefresh/github-pr-plugin
+    image: codefreshplugins/github-pr-plugin
     environment:
       - GITHUB_PR_OPERATION=update
       - GITHUB_PR_NUMBER=2 # your pr number here
